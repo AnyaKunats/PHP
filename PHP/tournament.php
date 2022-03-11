@@ -29,12 +29,11 @@ class Tournament extends Player{
         else
             $dt=date("d.m.Y");
 
-        for($i=0; $i<$arr_length; $i++){
+        for($i=1; $i<$arr_length; $i++){
             $dt=date("d.m.Y",strtotime("+1 day",strtotime($dt)));
             echo $this->tournaments .' '. $dt . "\n";
-            if($i==0) {
+            if($i==1) {
                 for ($j = 0; $j < $arr_length / 2; $j++) {
-                    //echo "j";
                     if ($arr_l[$j] !== NULL && $arr_r[$j] !== NULL)
                         echo $arr_l[$j] .' - '. $arr_r[$j]. "\n";
                     else
@@ -47,7 +46,6 @@ class Tournament extends Player{
                 array_unshift($arr_l, array_shift($arr_r));
                 array_unshift($arr_l, $item);
                 for ($j = 0; $j < $arr_length / 2; $j++) {
-                    //echo "j";
                     if ($arr_l[$j] !== NULL && $arr_r[$j] !== NULL)
                         echo $arr_l[$j] .' - '. $arr_r[$j]. "\n";
                     else
